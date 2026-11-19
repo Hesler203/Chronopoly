@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35761bccfbfd64b4386a0ad15b9d43c9, type: 3}
+  m_Name: Battleship
+  m_EditorClassIdentifier: Assembly-CSharp::soPlayerPieces
+  PlayerPiece: 0
+  PlayerPieceName: Battleship
+  PlayerPieceArt: {fileID: 748289119, guid: 7aad600eaf5fb58429f3315a1bcb301d, type: 3}
+  PlayerPieceModel: {fileID: 7012398426493048647, guid: e33fb45ab9ee649449dd11b3ccaf9f21, type: 3}
+  AudioMove: {fileID: 8300000, guid: b88eaee71c14f1a43a3ea0f18ffb9313, type: 3}

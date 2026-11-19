@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f2d6fe293ebdb4d9d05c1ddd56b382, type: 3}
+  m_Name: 02_Comm Chest
+  m_EditorClassIdentifier: Assembly-CSharp::soSpot
+  SpotName: Community Chest
+  SpotPosition: 2
+  SpotType: 5
+  SpotArt: {fileID: 0}
+  SpotAudio: {fileID: 8300000, guid: 844f7fe87ab86204a82fe52a516f04fe, type: 3}
+  soCards:
+  - {fileID: 11400000, guid: 89c78c7b80fa4fe4e9f90c83420530dc, type: 2}
+  - {fileID: 11400000, guid: 1fae8de3bad10744e919b9df064184ae, type: 2}
+  - {fileID: 11400000, guid: 51226d43d8c81fb47a99e3c6d021a94d, type: 2}
+  - {fileID: 11400000, guid: 3c38dceba7665fb45a4801c6e83c3ae6, type: 2}
+  - {fileID: 11400000, guid: 427be4ba35a4cb8448e3302d1c369388, type: 2}
+  - {fileID: 11400000, guid: 557182de76c0d834e94a71989327f4fe, type: 2}
+  - {fileID: 11400000, guid: 38bc2f8c4178232419f7f70e9f778e9f, type: 2}
+  - {fileID: 11400000, guid: 73ae06ea676ba7444917bf7eddc1bf1c, type: 2}
+  - {fileID: 11400000, guid: 6ee590597deec844c97d9f68ab2aa9a3, type: 2}
+  - {fileID: 11400000, guid: 654968819ea2df94f88a0ae6370ab27e, type: 2}
+  - {fileID: 11400000, guid: 6b54d0029c71ae14d903fc6b1114e482, type: 2}
+  - {fileID: 11400000, guid: 089fc2b384171854dbeb97aacc580acd, type: 2}
+  - {fileID: 11400000, guid: ac54ac630ddbf6a43abd7eeeaa389696, type: 2}
+  - {fileID: 11400000, guid: a7946f073b872054ba4900b6a0d64625, type: 2}
+  - {fileID: 11400000, guid: d7150ca504096b44e9fe6f044414f1f0, type: 2}
+  - {fileID: 11400000, guid: fa26625972137af4db50aa7d4fc25725, type: 2}
+  RiggedCard: -99

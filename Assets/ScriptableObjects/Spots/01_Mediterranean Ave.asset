@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e70252ce4fb1a843a0d2220838dae23, type: 3}
+  m_Name: 01_Mediterranean Ave
+  m_EditorClassIdentifier: Assembly-CSharp::soSpotProp
+  SpotName: Mediterranean Avenue
+  SpotPosition: 1
+  SpotType: 1
+  SpotArt: {fileID: -4377683315378760172, guid: 2733a8324fbceac468df4569698ca866, type: 3}
+  SpotAudio: {fileID: 8300000, guid: 20ef33fe15e95ab40b056e614bec7f5a, type: 3}
+  Price: 60
+  Rent: 020000000a0000001e0000005a00000096000000fa000000i
+  BuildingCost: 50
+  MortgageValue: 30
+  isMortgaged: 0
+  SpotBackArt: {fileID: -1355790697, guid: 2733a8324fbceac468df4569698ca866, type: 3}
+  OtherPropsInGroup:
+  - {fileID: 11400000, guid: eeadb633d9d6429438de7ef5923c53d2, type: 2}

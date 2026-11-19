@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e70252ce4fb1a843a0d2220838dae23, type: 3}
+  m_Name: 27_Ventnor Ave
+  m_EditorClassIdentifier: Assembly-CSharp::soSpotProp
+  SpotName: Ventnor Avenue
+  SpotPosition: 27
+  SpotType: 1
+  SpotArt: {fileID: -1648967099, guid: 2733a8324fbceac468df4569698ca866, type: 3}
+  SpotAudio: {fileID: 8300000, guid: 20ef33fe15e95ab40b056e614bec7f5a, type: 3}
+  Price: 260
+  Rent: 160000006e0000004a01000020030000cf0300007e040000i
+  BuildingCost: 150
+  MortgageValue: 130
+  isMortgaged: 0
+  SpotBackArt: {fileID: 1092823346, guid: 2733a8324fbceac468df4569698ca866, type: 3}
+  OtherPropsInGroup:
+  - {fileID: 11400000, guid: 968a4cdcc11c80f4397d964f0f91d4e3, type: 2}
+  - {fileID: 11400000, guid: e519c14a7fffd344e807c96db1e7d320, type: 2}

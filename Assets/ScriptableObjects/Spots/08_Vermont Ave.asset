@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e70252ce4fb1a843a0d2220838dae23, type: 3}
+  m_Name: 08_Vermont Ave
+  m_EditorClassIdentifier: Assembly-CSharp::soSpotProp
+  SpotName: Vermont Avenue
+  SpotPosition: 8
+  SpotType: 1
+  SpotArt: {fileID: 913741973, guid: 2733a8324fbceac468df4569698ca866, type: 3}
+  SpotAudio: {fileID: 8300000, guid: 20ef33fe15e95ab40b056e614bec7f5a, type: 3}
+  Price: 100
+  Rent: 060000001e0000005a0000000e0100009001000026020000i
+  OtherPropsInGroup:
+  - {fileID: 11400000, guid: 1dc9baf1e717f904fa361bf8543e09ee, type: 2}
+  - {fileID: 11400000, guid: c2ecdb15e073beb4b8f13bb242c79a52, type: 2}
+  BuildingCost: 50
+  canBuild: 0
+  HouseCount: 0
+  HotelCount: 0
+  MortgageValue: 50
+  canMortgage: 0
+  isMortgaged: 0
+  SpotBackArt: {fileID: -1027074156, guid: 2733a8324fbceac468df4569698ca866, type: 3}
+  PropOwner: {fileID: 0}

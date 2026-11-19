@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f2d6fe293ebdb4d9d05c1ddd56b382, type: 3}
+  m_Name: 22_Chance
+  m_EditorClassIdentifier: Assembly-CSharp::soSpot
+  SpotName: Chance
+  SpotPosition: 22
+  SpotType: 4
+  SpotArt: {fileID: 0}
+  SpotAudio: {fileID: 8300000, guid: a4e3867a0f750d540a1584713d52571c, type: 3}
+  soCards:
+  - {fileID: 11400000, guid: 71ac121367035b347b880642f7faf430, type: 2}
+  - {fileID: 11400000, guid: b036b4339d80b5b4494d9d736b0e76cb, type: 2}
+  - {fileID: 11400000, guid: 9dd5384e8feecd844afd51aa421db963, type: 2}
+  - {fileID: 11400000, guid: 60fc32f9e6f8ea941ae75eda87afdad4, type: 2}
+  - {fileID: 11400000, guid: e7ad819222fa26b4e8018d100c2183a7, type: 2}
+  - {fileID: 11400000, guid: 1f25972d02165a64d83d9e4a56762670, type: 2}
+  - {fileID: 11400000, guid: fc3ab335dbde31e4f910a6f4e10acdd9, type: 2}
+  - {fileID: 11400000, guid: 2da0c4ef92c476443ab11982afa197b9, type: 2}
+  - {fileID: 11400000, guid: 5093b4d5149262c45a743324e4a0d7a9, type: 2}
+  - {fileID: 11400000, guid: 084fca930c0ad484cbab843d800160c1, type: 2}
+  - {fileID: 11400000, guid: 2bd5e77345f6858488305ef66b1b2b90, type: 2}
+  - {fileID: 11400000, guid: 2b4c599c22e2b4544a0b673640519be2, type: 2}
+  - {fileID: 11400000, guid: e662f95dbbd3750429e12cde44b50b68, type: 2}
+  - {fileID: 11400000, guid: d4da6b05709611642b1c2cfa22048fa9, type: 2}
+  - {fileID: 11400000, guid: 5da810970a6aefe4bb7813581654a94b, type: 2}
+  - {fileID: 11400000, guid: b7c62e31434e810459eb8a8a01d6a3f3, type: 2}
+  RiggedCard: -99

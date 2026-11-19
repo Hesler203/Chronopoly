@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd1c81463f78b0548bf3e7e91f8d420b, type: 3}
+  m_Name: 38_Luxury Tax
+  m_EditorClassIdentifier: Assembly-CSharp::soSpot
+  SpotName: Luxury Tax
+  SpotPosition: 38
+  SpotType: 6
+  SpotArt: {fileID: -376791892, guid: 4735d5f78bdaa6640a9d69e85aba98b6, type: 3}
+  SpotAudio: {fileID: 8300000, guid: bd1189077ed4f834a984dea0590fcc6b, type: 3}
+  Tax: 75
