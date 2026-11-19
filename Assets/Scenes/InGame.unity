@@ -958,8 +958,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PropManager
   ListPropertiesOwned: []
-  CurrentHousesOwned: 0
-  CurrentHotelsOwned: 0
+  TotalHousesOwned: 0
+  TotalHotelsOwned: 0
 --- !u!114 &426233536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,6 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83305e7b627bf294e84c67b3c76f32b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandleLandingPosition
+  MessageTime: 2.5
 --- !u!114 &426233537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1641,7 +1642,7 @@ Transform:
   m_GameObject: {fileID: 732666221}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3189593, y: 0, z: 0, w: 0.94776845}
-  m_LocalPosition: {x: 0.4, y: 69.6, z: -94.2}
+  m_LocalPosition: {x: 0.16, y: 69.6, z: -94.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1803,8 +1804,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PropManager
   ListPropertiesOwned: []
-  CurrentHousesOwned: 0
-  CurrentHotelsOwned: 0
+  TotalHousesOwned: 0
+  TotalHotelsOwned: 0
 --- !u!114 &781600077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,6 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83305e7b627bf294e84c67b3c76f32b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandleLandingPosition
+  MessageTime: 2.5
 --- !u!114 &781600078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3441,8 +3443,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PropManager
   ListPropertiesOwned: []
-  CurrentHousesOwned: 0
-  CurrentHotelsOwned: 0
+  TotalHousesOwned: 0
+  TotalHotelsOwned: 0
 --- !u!114 &1842405084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3455,6 +3457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83305e7b627bf294e84c67b3c76f32b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandleLandingPosition
+  MessageTime: 2.5
 --- !u!114 &1842405085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3588,8 +3591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PropManager
   ListPropertiesOwned: []
-  CurrentHousesOwned: 0
-  CurrentHotelsOwned: 0
+  TotalHousesOwned: 0
+  TotalHotelsOwned: 0
 --- !u!114 &1911174770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3602,6 +3605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83305e7b627bf294e84c67b3c76f32b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandleLandingPosition
+  MessageTime: 2.5
 --- !u!114 &1911174771
 MonoBehaviour:
   m_ObjectHideFlags: 0

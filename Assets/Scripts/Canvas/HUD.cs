@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Canvas: Input: manages HUD buttons' inputs & stats display
@@ -13,12 +14,14 @@ public class HUD : MonoBehaviour
     public GameObject ButtonRoll;
     public GameObject ButtonEndTurn;
     public TMP_Text HUDMessage;
+    public Image ImageMessageBG;
 
     public void InitCanvas()
     {
         //PlayerManager.Instance.DetermineTurnOrder();
         SetRollDiceButton(true);
         HUDMessage.gameObject.SetActive(false);
+        ImageMessageBG.gameObject.SetActive(false);
 
         for (int i = 0; i < PlayerManager.Instance.Players.Length; i++)
         {
@@ -40,12 +43,14 @@ public class HUD : MonoBehaviour
     {
         HUDMessage.text = _message;
         HUDMessage.gameObject.SetActive(true);
+        ImageMessageBG.gameObject.SetActive(true);
         Invoke("HideHUDMessage", _duration);
     }
 
     public void HideHUDMessage()
     {
         HUDMessage.gameObject.SetActive(false);
+        ImageMessageBG.gameObject.SetActive(false);
         CameraManager.SetCurrentCamera(eCameraPosition.main);
         EvaluateEndTurn();
     }
