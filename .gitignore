@@ -11,7 +11,6 @@
 **/[Bb]uild/
 **/[Bb]uilds/
 **/[Ll]ogs/
-**/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -65,10 +64,8 @@ sysinfo.txt
 *.unitypackage
 *.app
 
-# Video & Audio Files
-*.wav
+# Video Files
 *.mp4
-*.mp3
 
 # Crashlytics generated file
 crashlytics-build.properties
