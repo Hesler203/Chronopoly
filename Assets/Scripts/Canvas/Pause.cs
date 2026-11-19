@@ -7,16 +7,27 @@ using UnityEngine.UI;
 /// </summary>
 public class Pause : MonoBehaviour
 {
+    public Animator PanelAnimator;
+
+    [Header("Panels")]
     public GameObject PausePanel;
     public GameObject OptionsPanel;
+
+    [Header("Confirm Widget Settings")]
+    public GameObject ConfirmWidget;
+    public TMP_Text ConfirmTitle;
+    public TMP_Text ConfirmTitleShadow;
+    public TMP_Text ConfirmPrompt;
+    public Button ConfirmSaveYesButton;
+    public Button ConfirmAbandonYesButton;
 
     public void OnOptionsClicked()
     {
         Debug.Log("<color=green>OnOptionsClicked</color>");
         AudioManager.PlayClick();
         //TODO replace with animation trigger instead
-        PausePanel.SetActive(false); //
-        OptionsPanel.SetActive(true); //
+        PausePanel.SetActive(false); // pausePanel shrinkAnim triggered
+        OptionsPanel.SetActive(true); // follow with optionsPanel growAnim
     }
 
     public void OnHelpAboutClicked()
@@ -37,15 +48,56 @@ public class Pause : MonoBehaviour
     {
         Debug.Log("<color=green>OnSave&ExitClicked</color>");
         AudioManager.PlayClick();
-        SaveManager.Instance.SaveSettings();
-        SceneMgr.Instance.LoadScene(eScene.FrontEnd);
+        string title = "SAVE AND EXIT?";
+        string prompt = "Are you sure you want to save and exit the game?";
+        ShowConfirmWidget(title, prompt, false);
+    }
+
+    public void ShowConfirmWidget(string _title, string _prompt, bool isAbandon)
+    {
+        ConfirmWidget.SetActive(true);
+        ConfirmTitle.text = ConfirmTitleShadow.text = _title;
+        ConfirmPrompt.text = _prompt;
+        ConfirmSaveYesButton.gameObject.SetActive(!isAbandon);
+        ConfirmAbandonYesButton.gameObject.SetActive(isAbandon);
+        //TODO confirm widget growAnim triggered + followed by glassFill fadeInAnim
+    }
+
+    public void OnConfirmNoClicked()
+    {
+        Debug.Log("<color=green>OnNoClicked</color>");
+        AudioManager.PlayClick();
+        //TODO replace with animation trigger instead
+        ConfirmWidget.SetActive(false); // confirm widget shrinkAnim triggered
+    }
+
+    public void OnConfirmYesClicked(bool shouldSave)
+    {
+        Debug.Log("<color=green>OnYesClicked</color>");
+        AudioManager.PlayClick();
+        ExitGame(shouldSave);
+    }
+
+    private void ExitGame(bool shouldSave)
+    {
+        if (shouldSave)
+        {
+            SaveManager.Instance.SaveSettings();
+            //TODO save players & their data
+        }
+        //TODO replace with animation trigger instead
+        // confirm widget shrinkAnim triggered
+        ConfirmWidget.SetActive(false); // called at end of shrinkAnim via anim event
+        SceneMgr.Instance.LoadScene(eScene.FrontEnd); // called at end of shrinkAnim via anim event
     }
 
     public void OnAbandonGameClicked()
     {
         Debug.Log("<color=green>OnAbandonGameClicked</color>");
         AudioManager.PlayClick();
-        SceneMgr.Instance.LoadScene(eScene.FrontEnd); //TODO may change to full application quit
+        string title = "ABANDON?";
+        string prompt = "Are you sure you want to abandon the game?\nProgress will not be saved.";
+        ShowConfirmWidget(title, prompt, true);
     }
 
     public void OnResumeClicked()
@@ -53,8 +105,8 @@ public class Pause : MonoBehaviour
         Debug.Log("<color=green>OnResumeClicked</color>");
         AudioManager.PlayClick();
         // TODO replace with animation trigger
-        CanvasManager.Instance.ShowCanvasHUD(); //
-        CanvasManager.Instance.HideCanvasPause(); //
+        CanvasManager.Instance.HideCanvasPause(); // canvasPause shrinkAnim triggered
+        CanvasManager.Instance.ShowCanvasHUD();
     }
 
 }

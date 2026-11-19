@@ -102,9 +102,9 @@ public class HUD : MonoBehaviour
     {
         Debug.Log("<color=green>OnPauseClicked</color>");
         AudioManager.PlayClick();
+        CanvasManager.Instance.HideCanvasHUD();
         //TODO replace with animation trigger
-        CanvasManager.Instance.ShowCanvasPause(); //
-        CanvasManager.Instance.HideCanvasHUD(); //
+        CanvasManager.Instance.ShowCanvasPause(); // canvasPause growAnim triggered
     }
 
     public void OnExitClicked()

@@ -73,8 +73,8 @@ public class Options : MonoBehaviour
         {
             //TODO hide this options panel & bring up pause menu panel
             // replace with animation trigger instead
-            CanvasManager.Instance.Pause.OptionsPanel.SetActive(false); //
-            CanvasManager.Instance.Pause.PausePanel.SetActive(true); //
+            CanvasManager.Instance.Pause.OptionsPanel.SetActive(false); // optionsPanel shrinkAnim triggered
+            CanvasManager.Instance.Pause.PausePanel.SetActive(true); // followed by pausePanel growAnim
         }
     }
 
