@@ -7,6 +7,7 @@ public class CanvasManager : MonoBehaviour
 {
     public static CanvasManager Instance;
     public HUD HUD { get; private set; }
+    public Pause Pause { get; private set; }
 
     [Header("FrontEnd")]
     private GameObject CanvasSplash;
@@ -19,6 +20,7 @@ public class CanvasManager : MonoBehaviour
 
     [Header("InGame")]
     private GameObject CanvasHUD;
+    private GameObject CanvasPause;
 
     void Awake()
     {
@@ -110,6 +112,22 @@ public class CanvasManager : MonoBehaviour
     public void HideCanvasHUD()
     {
         CanvasHUD.SetActive(false);
+    }
+
+    public void ShowCanvasPause()
+    {
+        if (CanvasPause != null)
+        {
+            CanvasPause.SetActive(true);
+            return;
+        }
+        CanvasPause = Instantiate(Resources.Load<GameObject>("Canvas/" + "CanvasPause"));
+        Pause = CanvasPause.GetComponent<Pause>();
+    }
+
+    public void HideCanvasPause()
+    {
+        CanvasPause.SetActive(false);
     }
 
     public void ShowCanvasStats()

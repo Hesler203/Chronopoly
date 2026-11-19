@@ -61,11 +61,21 @@ public class Options : MonoBehaviour
         AudioManager.Instance.SetMixerLevel(eMixers.SFX, _value);
     }
 
-    public void OnBackClicked()
+    public void OnBackClicked(bool isPaused = false)
     {
         Debug.Log("<color=green>OnBackClicked</color>");
         AudioManager.PlayClick();
-        PanelAnimator.SetTrigger(hashToFE);
+        if (!isPaused)
+        {
+            PanelAnimator.SetTrigger(hashToFE);
+        }
+        else
+        {
+            //TODO hide this options panel & bring up pause menu panel
+            // replace with animation trigger instead
+            CanvasManager.Instance.Pause.OptionsPanel.SetActive(false); //
+            CanvasManager.Instance.Pause.PausePanel.SetActive(true); //
+        }
     }
 
     public void OnPrefLangClicked()

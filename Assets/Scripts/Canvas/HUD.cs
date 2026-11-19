@@ -81,24 +81,30 @@ public class HUD : MonoBehaviour
     {
         Debug.Log("<color=green>OnTradeClicked</color>");
         AudioManager.PlayClick();
+        //TODO
     }
 
     public void OnManageClicked()
     {
         Debug.Log("<color=green>OnManageClicked</color>");
         AudioManager.PlayClick();
+        //TODO
     }
 
     public void OnLogClicked()
     {
         Debug.Log("<color=green>OnLogClicked</color>");
         AudioManager.PlayClick();
+        //TODO
     }
 
     public void OnPauseClicked()
     {
         Debug.Log("<color=green>OnPauseClicked</color>");
         AudioManager.PlayClick();
+        //TODO replace with animation trigger
+        CanvasManager.Instance.ShowCanvasPause(); //
+        CanvasManager.Instance.HideCanvasHUD(); //
     }
 
     public void OnExitClicked()
