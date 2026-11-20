@@ -45,16 +45,16 @@ public class soCard : ScriptableObject
 
 	public void TravelToDestination(Player _player, bool isGoBack = false)
 	{
-		int travelAmount = Destination - _player.currentPos;
+		int travelAmount = Destination - _player.MvCore.currentPos;
 		if (isGoBack)
 		{
-			travelAmount = (int)_player.currentPos - 3;
+			travelAmount = (int)_player.MvCore.currentPos - 3;
 		}
 		if (travelAmount < 0)
 		{
 			travelAmount += (int)ePos.Terminator;
 		}
-		_player.MovePlayer(travelAmount);
+		_player.MvCore.MovePlayer(travelAmount);
 	}
 
 	public void ActivateCardEffect(Player _player)
@@ -69,7 +69,7 @@ public class soCard : ScriptableObject
 				Debug.Log(CardAction.ToString() + " card added to " + _player.PlayerName + "'s inventory");
 				break;
 			case eCardAction.GoToJail:
-				_player.MovePlayer(-99);
+				_player.MvCore.MovePlayer(-99);
 				break;
 			case eCardAction.GoTo:
 				TravelToDestination(_player);

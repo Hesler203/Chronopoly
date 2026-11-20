@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour
             Players[i].RollAmount = 0;
             Players[i].mgPropManager = Players[i].AddComponent<PropManager>();
             Players[i].MvCore = Players[i].AddComponent<MoveCore>();
-            Players[i].HandleLandingPos = Players[i].AddComponent<HandleLandingPosition>();
+            Players[i].MvCore.HandleLandingPos = Players[i].AddComponent<HandleLandingPosition>();
         }
         Players[0].soPlayerType = GameManager.Instance.soRefs.PlayerTypes[(int)ePlayerType.human];
         Players[1].soPlayerType = GameManager.Instance.soRefs.PlayerTypes[(int)ePlayerType.ai];

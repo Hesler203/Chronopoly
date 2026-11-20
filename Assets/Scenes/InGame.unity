@@ -919,7 +919,6 @@ MonoBehaviour:
   PlayerName: Player 2
   soPlayerType: {fileID: 11400000, guid: 36a7dc8d2d0f4e94ea46380b4fe167f8, type: 2}
   soPlayerPiece: {fileID: 11400000, guid: a34a0fa9b751614419a84204072dd164, type: 2}
-  currentPos: 0
   CameraPosition: {fileID: 0}
   PlayerPiece: {fileID: 0}
   PlayerMoney: 1500
@@ -985,6 +984,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd5dc0ef425fab40b54a7ed8e587058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveCore
+  currentPos: 0
+  HandleLandingPos: {fileID: 426233536}
+  moveSpeed: 0.5
 --- !u!1001 &430825516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2515,7 +2517,6 @@ MonoBehaviour:
   PlayerName: Player 1
   soPlayerType: {fileID: 11400000, guid: ef488033d27de954abb2cd8b13d32441, type: 2}
   soPlayerPiece: {fileID: 11400000, guid: 943e307cdc185814e8eae4113738e744, type: 2}
-  currentPos: 0
   CameraPosition: {fileID: 0}
   PlayerPiece: {fileID: 0}
   PlayerMoney: 1500
@@ -2581,6 +2582,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd5dc0ef425fab40b54a7ed8e587058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveCore
+  currentPos: 0
+  HandleLandingPos: {fileID: 781600077}
+  moveSpeed: 0.5
 --- !u!1 &812672460
 GameObject:
   m_ObjectHideFlags: 0
@@ -5361,7 +5365,6 @@ MonoBehaviour:
   PlayerName: Player 4
   soPlayerType: {fileID: 11400000, guid: ef488033d27de954abb2cd8b13d32441, type: 2}
   soPlayerPiece: {fileID: 11400000, guid: 22efb0348782d0e47829c6119e875c52, type: 2}
-  currentPos: 0
   CameraPosition: {fileID: 0}
   PlayerPiece: {fileID: 0}
   PlayerMoney: 1500
@@ -5427,6 +5430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd5dc0ef425fab40b54a7ed8e587058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveCore
+  currentPos: 0
+  HandleLandingPos: {fileID: 1842405084}
+  moveSpeed: 0.5
 --- !u!1 &1898001722
 GameObject:
   m_ObjectHideFlags: 0
@@ -5509,7 +5515,6 @@ MonoBehaviour:
   PlayerName: Player 3
   soPlayerType: {fileID: 11400000, guid: ef488033d27de954abb2cd8b13d32441, type: 2}
   soPlayerPiece: {fileID: 11400000, guid: 75c0af24b7fc6d04b85e36368a1bd1f3, type: 2}
-  currentPos: 0
   CameraPosition: {fileID: 0}
   PlayerPiece: {fileID: 0}
   PlayerMoney: 1500
@@ -5575,6 +5580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd5dc0ef425fab40b54a7ed8e587058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveCore
+  currentPos: 0
+  HandleLandingPos: {fileID: 1911174770}
+  moveSpeed: 0.5
 --- !u!1 &1927371416
 GameObject:
   m_ObjectHideFlags: 0

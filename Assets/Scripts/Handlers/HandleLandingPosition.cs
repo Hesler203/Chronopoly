@@ -4,7 +4,7 @@ using UnityEngine;
 public class HandleLandingPosition : MonoBehaviour
 {
     private Player player;
-    private MoveCore moveCore; //TODO
+    private MoveCore moveCore;
 
     public float MessageTime = 2.5f;
 
@@ -17,7 +17,7 @@ public class HandleLandingPosition : MonoBehaviour
     public void SetLandingSpot()
     {
         // TODO set current spot & switch between spot types
-        soSpot so_Spot = Board.GetSpot(player.currentPos);
+        soSpot so_Spot = Board.GetSpot(moveCore.currentPos);
         CameraManager.SetCurrentCamera(eCameraPosition.overhead);
         string message = null;
 
@@ -77,7 +77,7 @@ public class HandleLandingPosition : MonoBehaviour
                 CanvasManager.Instance.HUD.EvaluateEndTurn();
                 break;
             case eSpotType.GoToJail:
-                player.MovePlayer(-99);
+                player.MvCore.MovePlayer(-99);
                 break;
             case eSpotType.DoNothing:
                 CanvasManager.Instance.HUD.EvaluateEndTurn();

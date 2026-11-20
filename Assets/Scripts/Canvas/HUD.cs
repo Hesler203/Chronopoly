@@ -80,7 +80,7 @@ public class HUD : MonoBehaviour
         AudioManager.PlayClick();
         int diceRoll = DiceManager.Instance.RollDice();
         BottomUI.SetActive(false);
-        PlayerManager.GetCurrentPlayer().MovePlayer(diceRoll);
+        PlayerManager.GetCurrentPlayer().MvCore.MovePlayer(diceRoll);
     }
 
     public void OnTradeClicked()
