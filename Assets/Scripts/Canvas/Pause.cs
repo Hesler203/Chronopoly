@@ -9,10 +9,6 @@ public class Pause : MonoBehaviour
 {
     public Animator PanelAnimator;
 
-    [Header("Panels")]
-    public GameObject PausePanel;
-    public GameObject OptionsPanel;
-
     [Header("Confirm Widget Settings")]
     public GameObject ConfirmWidget;
     public TMP_Text ConfirmTitle;
@@ -26,15 +22,29 @@ public class Pause : MonoBehaviour
         Debug.Log("<color=green>OnOptionsClicked</color>");
         AudioManager.PlayClick();
         //TODO replace with animation trigger instead
-        PausePanel.SetActive(false); // pausePanel shrinkAnim triggered
-        OptionsPanel.SetActive(true); // follow with optionsPanel growAnim
+        CanvasManager.Instance.HideCanvasPause(); // pauseCanvas shrinkAnimToOptions triggered
+        CanvasManager.Instance.ShowCanvasOptions(); // follow with optionsCanvas growAnim
+    }
+
+    public void TransitionToCanvasOptions() //AnimEvent: shrinkAnimToOptions end
+    {
+        CanvasManager.Instance.ShowCanvasOptions();
+        CanvasManager.Instance.HideCanvasPause();
     }
 
     public void OnHelpAboutClicked()
     {
         Debug.Log("<color=green>OnHelp&AboutClicked</color>");
         AudioManager.PlayClick();
-        //TODO
+        //TODO replace with animation trigger instead
+        CanvasManager.Instance.HideCanvasPause(); // pauseCanvas shrinkAnimToHelp triggered
+        CanvasManager.Instance.ShowCanvasHelp(); // follow with helpCanvas growAnim
+    }
+
+    public void TransitionToCanvasHelp() //AnimEvent: shrinkAnimToHelp end
+    {
+        CanvasManager.Instance.ShowCanvasHelp();
+        CanvasManager.Instance.HideCanvasPause();
     }
 
     public void OnHouseRulesClicked()

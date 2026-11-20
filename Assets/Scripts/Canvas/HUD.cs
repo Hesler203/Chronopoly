@@ -7,14 +7,20 @@ using UnityEngine.UI;
 /// </summary>
 public class HUD : MonoBehaviour
 {
+    [Header("TopUI Widget SpawnArea")]
     public RectTransform GroupPlayerTabs;
-    public RectTransform PropUI;
-    public RectTransform WidgetSpawnPoint; //where center widgets will spawn
+
+    public TMP_Text HUDMessage;
+    public Image ImageMessageBG;
+
+
+    [Header("CenterUI Widget SpawnArea")]
+    public RectTransform CenterWidgetSpawnPoint;
+
+    [Header("BottomUI ButtonGroup")]
     public GameObject BottomUI;
     public GameObject ButtonRoll;
     public GameObject ButtonEndTurn;
-    public TMP_Text HUDMessage;
-    public Image ImageMessageBG;
 
     public void InitCanvas()
     {
@@ -113,11 +119,5 @@ public class HUD : MonoBehaviour
         AudioManager.PlayClick();
         Destroy(PlayerManager.Instance.gameObject);
         SceneMgr.Instance.LoadScene(eScene.FrontEnd);
-    }
-
-    public void InitPropPurchaseWidget(soSpot _soSpot)
-    {
-        w_PropPanel wPropPanel = Instantiate(Resources.Load<GameObject>("Widgets/w_PropPanel"), PropUI).GetComponent<w_PropPanel>();
-        wPropPanel.InitWidget(_soSpot.GetSpotProp());
     }
 }

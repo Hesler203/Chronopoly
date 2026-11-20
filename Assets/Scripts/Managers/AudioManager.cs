@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 public enum eMixers { Music, SFX }
-public enum eMusicTrack { Swing, Smooth, Lounge, All, UserMusic, Off }
+public enum eMusicTrack { Swing, Smooth, Lounge, All, UserMusic}
 
 /// <summary>
 /// Audio: Manager: Singleton that handles game audio via Audio Sources & clips

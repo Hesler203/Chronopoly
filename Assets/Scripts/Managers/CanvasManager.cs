@@ -7,20 +7,19 @@ public class CanvasManager : MonoBehaviour
 {
     public static CanvasManager Instance;
     public HUD HUD { get; private set; }
-    public Pause Pause { get; private set; }
 
     [Header("FrontEnd")]
     private GameObject CanvasSplash;
     private GameObject CanvasFE;
-    private GameObject CanvasOptions;
+    public GameObject CanvasOptions { get; private set; }
     private GameObject CanvasSetup;
     private GameObject CanvasStats;
     private GameObject CanvasRollHistory;
-    private GameObject CanvasHelp;
+    public GameObject CanvasHelp { get; private set; }
 
     [Header("InGame")]
-    private GameObject CanvasHUD;
-    private GameObject CanvasPause;
+    public GameObject CanvasHUD { get; private set; }
+    public GameObject CanvasPause { get; private set; }
 
     void Awake()
     {
@@ -122,7 +121,6 @@ public class CanvasManager : MonoBehaviour
             return;
         }
         CanvasPause = Instantiate(Resources.Load<GameObject>("Canvas/" + "CanvasPause"));
-        Pause = CanvasPause.GetComponent<Pause>();
     }
 
     public void HideCanvasPause()
@@ -181,7 +179,7 @@ public class CanvasManager : MonoBehaviour
 
     public void ShowPurchaseWidget(soSpot _soSpot)
     {
-        w_SpotProp widget = Instantiate(Resources.Load<GameObject>("Widgets/w_SpotProp"), HUD.WidgetSpawnPoint).GetComponent<w_SpotProp>();
+        w_SpotProp widget = Instantiate(Resources.Load<GameObject>("Widgets/w_SpotProp"), HUD.CenterWidgetSpawnPoint).GetComponent<w_SpotProp>();
         widget.InitWidget(_soSpot);
     }
 }

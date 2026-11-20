@@ -14,10 +14,10 @@ public class Options : MonoBehaviour
     public TMP_Text PrefLangText;
     public Slider MusicSlider;
     public Slider SFXSlider;
-    public TMP_Text PlayerNameText;
+    public TMP_InputField PlayerNameInput;
     public TMP_Text AnimationsToggleText;
-    public TMP_Text DiceColorText;
-    public TMP_Text GameMusicText;
+    public TMP_Dropdown DiceColorDropdown;
+    public TMP_Dropdown GameMusicDropdown;
 
     private SaveManager mgrSaveManager;
     private AudioManager mgrAudioManager;
@@ -33,10 +33,10 @@ public class Options : MonoBehaviour
         PrefLangText.text = mgrSaveManager.LANGUAGES[(int)mgrSaveManager.Language];
         MusicSlider.value = mgrAudioManager.Volume[(int)eMixers.Music];
         SFXSlider.value = mgrAudioManager.Volume[(int)eMixers.SFX];
-        PlayerNameText.text = mgrSaveManager.PlayerName;
+        PlayerNameInput.text = mgrSaveManager.PlayerName;
         AnimationsToggleText.text = mgrSaveManager.isAnimationsOn.ToString();
-        DiceColorText.text = mgrSaveManager.DiceColor.ToString();
-        GameMusicText.text = mgrAudioManager.GetTrackName(mgrAudioManager.CurrentTrack);
+        DiceColorDropdown.value = (int)mgrSaveManager.DiceColor; //TODO
+        GameMusicDropdown.value = (int)mgrAudioManager.CurrentTrack; //TODO
     }
 
     private void ResetTriggers() //AnimEvent: ShrinkAnim start
@@ -46,9 +46,28 @@ public class Options : MonoBehaviour
             PanelAnimator.ResetTrigger(param.name);
         }
     }
-    public void TransitionToCanvasFE() //AnimEvent: ShrinkAnim end
+    public void TransitionToCanvasFE() //AnimEvent: ShrinkAnimToFE end
     {
         CanvasManager.Instance.HideCanvasOptions();
+    }
+
+    public void TransitionToCanvasPause() //AnimEvent: ShrinkAnimToOptions end
+    {
+        CanvasManager.Instance.ShowCanvasPause();
+        CanvasManager.Instance.HideCanvasOptions();
+    }
+
+    public void OnPrefLangClicked()
+    {
+        Debug.Log("<color=green>OnPrefLangClicked</color>");
+        AudioManager.PlayClick();
+        mgrSaveManager.Language++;
+        if (mgrSaveManager.Language == eLanguages.Terminator)
+        {
+            mgrSaveManager.Language = 0;
+        }
+        mgrSaveManager.SaveSettings();
+        SetTextsToMirrorPrefs();
     }
 
     public void OnMusicSliderChanged(float _value)
@@ -61,6 +80,42 @@ public class Options : MonoBehaviour
         AudioManager.Instance.SetMixerLevel(eMixers.SFX, _value);
     }
 
+    public void OnPlayerNameChanged()
+    {
+        Debug.Log("<color=green>Player name changed to " + PlayerNameInput.text + "</color>");
+        mgrSaveManager.PlayerName = PlayerNameInput.text;
+        mgrSaveManager.SaveSettings();
+    }
+
+    public void OnAnimationsClicked()
+    {
+        Debug.Log("<color=green>OnAnimationsClicked</color>");
+        AudioManager.PlayClick();
+        mgrSaveManager.isAnimationsOn++;
+        if (mgrSaveManager.isAnimationsOn == eAnimationsToggle.Terminator)
+        {
+            mgrSaveManager.isAnimationsOn = 0;
+        }
+        mgrSaveManager.SaveSettings();
+        SetTextsToMirrorPrefs();
+    }
+
+    public void OnDiceColorChanged()
+    {
+        eDiceColors newColor = (eDiceColors)DiceColorDropdown.value;
+        Debug.Log("<color=green>Dice color changed to " + newColor.ToString() + "</color>");
+        mgrSaveManager.DiceColor = newColor;
+        mgrSaveManager.SaveSettings();
+    }
+
+    public void OnMusicTrackChanged()
+    {
+        eMusicTrack newTrack = (eMusicTrack)GameMusicDropdown.value;
+        Debug.Log("<color=green>Game music changed to " + newTrack.ToString() + "</color>");
+        mgrAudioManager.SetMusicTrack(newTrack);
+        mgrSaveManager.SaveSettings();
+    }
+
     public void OnBackClicked(bool isPaused = false)
     {
         Debug.Log("<color=green>OnBackClicked</color>");
@@ -71,32 +126,10 @@ public class Options : MonoBehaviour
         }
         else
         {
-            //TODO hide this options panel & bring up pause menu panel
+            //TODO hide this options canvas & bring up pause canvas
             // replace with animation trigger instead
-            CanvasManager.Instance.Pause.OptionsPanel.SetActive(false); // optionsPanel shrinkAnim triggered
-            CanvasManager.Instance.Pause.PausePanel.SetActive(true); // followed by pausePanel growAnim
+            CanvasManager.Instance.HideCanvasOptions(); // shrinkAnimToPause triggered
+            CanvasManager.Instance.ShowCanvasPause(); // called at shrinkAnimToPause end
         }
     }
-
-    public void OnPrefLangClicked()
-    {
-        Debug.Log("<color=green>OnPrefLangClicked</color>");
-        AudioManager.PlayClick();
-        mgrSaveManager.Language++; //TODO loop around to first language
-        mgrSaveManager.SaveSettings();
-        SetTextsToMirrorPrefs();
-    }
-
-    //TODO player name input field
-
-    public void OnAnimationsClicked()
-    {
-        Debug.Log("<color=green>OnAnimationsClicked</color>");
-        AudioManager.PlayClick();
-        mgrSaveManager.isAnimationsOn++; //TODO loop around toggle choices
-        mgrSaveManager.SaveSettings();
-        SetTextsToMirrorPrefs();
-    }
-
-    //TODO other buttons
 }

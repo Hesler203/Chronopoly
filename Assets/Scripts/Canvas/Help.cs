@@ -17,6 +17,7 @@ public class Help : MonoBehaviour
 
     public Animator PanelAnimator;
 
+    [Header("Panels")]
     public GameObject HelpPanel;
     public GameObject AboutPanel;
     public GameObject EULAPanel;
@@ -60,11 +61,21 @@ public class Help : MonoBehaviour
         PanelAnimator.SetTrigger(hashToOverview);
     }
 
-    public void OnHelpBackClicked()
+    public void OnHelpBackClicked(bool isPaused = false)
     {
         Debug.Log("<color=green>Back Clicked - Hide Help Canvas</color>");
         AudioManager.PlayClick();
-        PanelAnimator.SetTrigger(hashToFE);
+        if (!isPaused)
+        {
+            PanelAnimator.SetTrigger(hashToFE);
+        }
+        else
+        {
+            //TODO hide this help canvas & bring up pause canvas
+            // replace with animation trigger instead
+            CanvasManager.Instance.HideCanvasHelp(); // shrinkAnimToPause triggered
+            CanvasManager.Instance.ShowCanvasPause(); // called at shrinkAnimToPause end
+        }
     }
 
     public void OnAboutBackClicked()
